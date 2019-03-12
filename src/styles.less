@@ -1,0 +1,110 @@
+head, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+}
+
+.container {
+    background: #fff;
+    position: relative;
+    width: 824px;
+    margin: 251px auto;
+    border: 1px solid #D7DADE;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    min-height: 521px;
+    max-height: 100%;
+    max-width: 100%;
+    padding-bottom: 40px;
+    
+    h1{
+        font-family: -apple-system, BlinkMacSystemFont;
+        font-size: 26px;
+        color: #333333;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+
+    .videoWrapper{
+        margin-bottom: 20px;
+    }
+
+    section{
+        position: relative;
+        text-align: left;
+        margin: 3px 80px;
+        line-height: 20px;
+        font-size: 15px;
+        
+        .textWrapper {
+            background-color: #f7f7f7;
+            padding: 5px;
+        }
+        
+        &.pink:after{
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            left: -45px;
+            bottom: 0;
+            border: 2px solid rgba(238, 110, 255, .4);
+            background: rgba(238, 110, 255, .1);
+        } 
+
+        &.blue:after{
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            left: -45px;
+            bottom: 0;
+            border: 2px solid rgba(255, 156, 110, 0.4);
+            background: rgba(255, 168, 110, 0.1);
+        } 
+        
+    }
+}
+
+
+footer {
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    height:60px;
+    text-align: center;
+    border-bottom: 3px solid #00A7D1;
+    
+    @media only screen and (max-width: 600px) {
+        position: static;
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    @media only screen and (max-width: 600px) {
+        position: static;
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+.author{
+    margin-top: 12px;
+    display: block;
+    padding: 5px;
+}
