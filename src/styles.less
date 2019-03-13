@@ -3,6 +3,19 @@ head, body {
     margin: 0;
     padding: 0;
     background: #f7f7f7;
+    ::-webkit-scrollbar {
+        width: 9px;
+    }
+     
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
 }
 
 .container {
@@ -15,7 +28,7 @@ head, body {
     text-align: center;
     overflow: auto;
     min-height: 521px;
-    max-height: 100%;
+    max-height: ~"calc(100% - 210px)";
     max-width: 100%;
     padding-bottom: 40px;
     
@@ -41,9 +54,10 @@ head, body {
         .textWrapper {
             background-color: #f7f7f7;
             padding: 5px;
+            border-radius: 15px;
         }
         
-        &.pink:after{
+        &:after{
             content: '';
             position: absolute;
             width: 28px;
@@ -52,24 +66,40 @@ head, body {
             overflow: hidden;
             left: -45px;
             bottom: 0;
+        }
+
+        &.pink:after{
             border: 2px solid rgba(238, 110, 255, .4);
             background: rgba(238, 110, 255, .1);
         } 
 
         &.blue:after{
-            content: '';
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            overflow: hidden;
-            left: -45px;
-            bottom: 0;
             border: 2px solid rgba(255, 156, 110, 0.4);
             background: rgba(255, 168, 110, 0.1);
         } 
-        
+            
+        .author{
+            margin-top: 12px;
+            display: block;
+            padding: 5px;
+        }
     }
+    
+    &.center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        @media only screen and (max-width: 600px) {
+            position: static;
+            -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+    }
+
 }
 
 
@@ -87,24 +117,4 @@ footer {
         width: 100%;
         margin-top: 50px;
     }
-}
-
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    @media only screen and (max-width: 600px) {
-        position: static;
-        -ms-transform: translate(0, 0);
-        transform: translate(0, 0);
-    }
-}
-
-.author{
-    margin-top: 12px;
-    display: block;
-    padding: 5px;
 }

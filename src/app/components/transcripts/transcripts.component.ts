@@ -20,10 +20,9 @@ export class TranscriptsComponent implements OnInit {
   }
 
   loadTranscriptsData() {
-
     this.transcriptsService.getTranscripts(this.id).subscribe((data:[]) => {
       data.sort((a:Transcript, b:Transcript): number => a.time < b.time ? -1 : a.time > b.time ? 1 : 0)
-      error => {console.log(error)}
+      error => {console.error(error)}
       this.transcripts = data;
     });
   }

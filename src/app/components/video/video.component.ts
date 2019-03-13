@@ -1,4 +1,5 @@
 import { Component, OnInit, Input  } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-video',
@@ -7,14 +8,14 @@ import { Component, OnInit, Input  } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
   @Input() id;
+  baseUrl = environment.baseUrl;
   videoSrc;
 
   constructor() {}
 
   ngOnInit() {
     if(this.id) {
-      // move to config
-      this.videoSrc = `https://static.chorus.ai/api/${this.id}.mp4`;
+      this.videoSrc = `${this.baseUrl}/api/${this.id}.mp4`;
     }
   }
 }
