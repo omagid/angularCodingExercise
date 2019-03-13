@@ -1,6 +1,5 @@
-<section *ngFor="let transcript of transcripts; let i = index;" 
-        [ngClass]="(i==(transcripts.length-1) || (transcript.speaker != transcripts[i+1].speaker)) && getSpeakerClass(transcript.speaker)">
-    <small *ngIf=" i==0 || (transcript.speaker != transcripts[i-1].speaker)" class="author">{{transcript.speaker}}</small>
+<section *ngFor="let transcript of transcripts; let i = index;" [ngClass]="getSpeakerClass(transcript.speaker, i)">
+    <small *ngIf="isDifferentSpeaker(i)" class="author">{{transcript.speaker}}</small>
     <div class="content textWrapper">{{transcript.snippet}}</div>
 </section>
 
