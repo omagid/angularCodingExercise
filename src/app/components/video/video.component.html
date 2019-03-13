@@ -1,5 +1,9 @@
 <div class="videoWrapper">
-    <video width="320" height="240" controls>
-        <source [src]="videoSrc" type="video/mp4">
+    <video *ngIf="!videoErr; else error" width="320" height="240" controls>
+        <source [src]="videoSrc" type="video/mp4" (error)="handleError()">
     </video>
-</div>
+    
+    <ng-template #error>
+        <h1>Error occurred - Video cannot be displayed</h1>
+    </ng-template>
+</div>      

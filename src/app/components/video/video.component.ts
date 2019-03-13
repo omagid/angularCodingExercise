@@ -10,6 +10,7 @@ export class VideoComponent implements OnInit {
   @Input() id;
   baseUrl = environment.baseUrl;
   videoSrc;
+  videoErr = false;
 
   constructor() {}
 
@@ -17,5 +18,9 @@ export class VideoComponent implements OnInit {
     if(this.id) {
       this.videoSrc = `${this.baseUrl}/api/${this.id}.mp4`;
     }
+  }
+
+  handleError() {
+    this.videoErr = true;
   }
 }
